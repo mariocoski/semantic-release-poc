@@ -12,7 +12,5 @@
 
 - on push to the repo
 - when PR merged to master
-- when pre-released
-- when released
-
-5. Automatic changelog generation happens only in: "released" pipeline.
+- when PR is merged to staging
+- when PR is merged to production
