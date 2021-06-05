@@ -1,0 +1,41 @@
+name: Deploy to staging
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  deploy-app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Install
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm run test
+
+      # https://github.com/semantic-release/semantic-release/blob/master/docs/usage/configuration.md#existing-version-tags
+      # https://github.com/semantic-release/semantic-release/blob/master/docs/usage/workflow-configuration.md#pre-release-branches
+      # https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/github-actions.md
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
+
+      - name: Get the release version
+        id: rlversion
+        run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
+
+      - name: Deploying to staging
+        run: echo "I wish I have a staging environment"
+
+
