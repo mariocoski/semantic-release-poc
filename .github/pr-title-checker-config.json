@@ -1,0 +1,11 @@
+{
+  "LABEL": {
+    "name": "PR title needs formatting",
+    "color": "EEEEEE"
+  },
+  "CHECKS": {
+    "prefixes": ["Bump "],
+    "regexp": "^(feat|fix|docs|style|refactor|perf|test|chore)((([a-zA-Z0-9 -]+)))?:",
+    "ignoreLabels": ["skip-pr-title-check"]
+  }
+}

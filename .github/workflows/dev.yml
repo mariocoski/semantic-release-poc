@@ -1,0 +1,23 @@
+name: Deploy to dev
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy-app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm run test
+
+      - name: Deploying to dev
+        run: echo "I wish I have a dev environment"

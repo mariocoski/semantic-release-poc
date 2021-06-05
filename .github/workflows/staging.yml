@@ -1,0 +1,26 @@
+name: Deploy to staging
+
+on:
+  release:
+    types: ["prereleased"]
+
+jobs:
+  deploy-app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm run test
+
+      - name: Deploying to staging
+        run: echo "I wish I have a staging environment"
+
+
+

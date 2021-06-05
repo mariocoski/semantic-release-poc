@@ -1,0 +1,26 @@
+name: Deploy to production
+
+on:
+  release:
+    types: ["released"]
+
+jobs:
+  deploy-app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Test
+        run: npm run test
+
+      - name: Deploying to production
+        run: echo "I wish I have a production environment"
+
+      - name: Automatic changelog generation
+        run: echo "TODO: implement logic to generate changelog automatically"
