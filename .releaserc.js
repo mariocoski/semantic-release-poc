@@ -2,6 +2,7 @@
 const branch = process.env.GITHUB_REF && process.env.GITHUB_REF.split("/")[2];
 
 const config = {
+  // TODO: remove master
   branches: ["production", "master", { name: "staging", prerelease: true }],
 };
 
