@@ -1,5 +1,5 @@
-// @source: https://github.com/semantic-release/changelog/issues/51const
-const branch = process.env.GITHUB_REF && process.env.GITHUB_REF.split("/")[2];
+// @source: https://github.com/semantic-release/changelog/issues/51
+const currentBranch = process.env.GITHUB_REF && process.env.GITHUB_REF.split("/")[2];
 
 // staging -> prerelese (draft release to github)
 // production -> relese 
@@ -17,9 +17,9 @@ const prereleasePlugins = [...basePlugins, "@semantic-release/github"];
 
 const releasePlugins = [
   ...basePlugins,
-  "@semantic-release/changelog",
+  "@semantic-release/changelog", // only update changelog for production release
   [
-    "@semantic-release/npm",
+    "@semantic-release/npm", // this is how it does update version in package.json and package-lock.json
     {
       npmPublish: false,
     },
@@ -27,7 +27,7 @@ const releasePlugins = [
   [
     "@semantic-release/git",
     {
-      assets: ["CHANGELOG.md", "package.json", "package-lock.json"],
+      assets: ["CHANGELOG.md", "package.json", "package-lock.json"], 
       message:
         "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
     },
@@ -36,7 +36,7 @@ const releasePlugins = [
 ];
 
 const isRelease = config.branches.some(
-  (it) => it === branch || (it.name === branch && !it.prerelease)
+  (branch) => branch === currentBranch || (branch.name === currentBranch && !branch.prerelease)
 );
 
 config.plugins = isRelease ? releasePlugins : prereleasePlugins;
