@@ -28,7 +28,7 @@ jobs:
       # https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/github-actions.md
       - name: Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx semantic-release
 
       - name: Get the release version
@@ -37,5 +37,4 @@ jobs:
 
       - name: Deploying to staging
         run: echo "I wish I have a staging environment"
-
 
