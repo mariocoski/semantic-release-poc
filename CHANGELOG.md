@@ -1,3 +1,11 @@
+## [4.1.1](https://github.com/mariocoski/semantic-release-poc/compare/v4.1.0...v4.1.1) (2021-06-06)
+
+
+### Bug Fixes
+
+* change config ([777ddd1](https://github.com/mariocoski/semantic-release-poc/commit/777ddd10418acd45483a4ffee116226350709387))
+* change config ([925bc48](https://github.com/mariocoski/semantic-release-poc/commit/925bc486d18d8586a4ffbe55020240afc0349676))
+
 # [4.1.0](https://github.com/mariocoski/semantic-release-poc/compare/v4.0.45...v4.1.0) (2021-06-06)
 
 
