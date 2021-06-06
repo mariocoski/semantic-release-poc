@@ -1,19 +1,22 @@
 // @source: https://github.com/semantic-release/changelog/issues/51const
 const branch = process.env.GITHUB_REF && process.env.GITHUB_REF.split("/")[2];
 
+// staging -> prerelese (draft release to github)
+// production -> relese 
+// (bump version on package.json, package-lock.json and update CHANGELOG.md and relese to github)
 const config = {
   branches: ["production", { name: "staging", prerelease: true }],
 };
 
-const prereleasePlugins = [
+const basePlugins = [
   "@semantic-release/commit-analyzer",
   "@semantic-release/release-notes-generator",
-  "@semantic-release/github",
 ];
 
+const prereleasePlugins = [...basePlugins, "@semantic-release/github"];
+
 const releasePlugins = [
-  "@semantic-release/commit-analyzer",
-  "@semantic-release/release-notes-generator",
+  ...basePlugins,
   "@semantic-release/changelog",
   [
     "@semantic-release/npm",
