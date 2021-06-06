@@ -30,10 +30,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         # https://github.com/semantic-release/semantic-release/issues/753
-        run: export NEXT_VERSION=$(npx -p @semantic-release/exec -p semantic-release semantic-release --dry-run --plugins "@semantic-release/commit-analyzer,@semantic-release/exec" --analyzeCommits @semantic-release/commit-analyzer --verifyRelease @semantic-release/exec --verifyReleaseCmd 'echo ${nextRelease.version}')
+        # https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-an-environment-variable
+        run: echo "{NEXT_VERSION}={$(npx -p @semantic-release/exec -p semantic-release semantic-release --dry-run --plugins "@semantic-release/commit-analyzer,@semantic-release/exec" --analyzeCommits @semantic-release/commit-analyzer --verifyRelease @semantic-release/exec --verifyReleaseCmd 'echo ${nextRelease.version}')}" >> $GITHUB_ENV
 
       - name: Print next version
-        run: echo $NEXT_VERSION
+        run: echo "${{ env.NEXT_VERSION }}"
 
       - name: Release
         env:
