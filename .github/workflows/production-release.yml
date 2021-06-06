@@ -26,14 +26,17 @@ jobs:
       # https://github.com/semantic-release/semantic-release/blob/master/docs/usage/configuration.md#existing-version-tags
       # https://github.com/semantic-release/semantic-release/blob/master/docs/usage/workflow-configuration.md#pre-release-branches
       # https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/github-actions.md
+      - name: Set next version
+        # https://github.com/semantic-release/semantic-release/issues/753
+        run: export NEXT_VERSION=$(npx semantic-release --dry-run | grep 'The next release version is' | sed -E 's/.* ([[:digit:].]+)$/\1/')
+
+      - name: Print next version
+        run: echo $NEXT_VERSION
+
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npx semantic-release
-
-      - name: Get the release version
-        id: rlversion
-        run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
 
       - name: Deploying to staging
         run: echo "I wish I have a production environment"
