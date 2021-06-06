@@ -1,13 +1,5 @@
 {
   "branches": ["production", { "name": "staging", "prerelease": true }],
-  "prepare": [
-    "@semantic-release/changelog",
-    {
-      "path": "@semantic-release/git",
-      "assets": ["CHANGELOG.md", "package.json", "package-lock.json"],
-      "message": "chore(release): ${nextRelease.version} \n\n${nextRelease.notes}"
-    }
-  ],
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
