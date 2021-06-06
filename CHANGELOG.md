@@ -1,3 +1,24 @@
+# [4.3.0](https://github.com/mariocoski/semantic-release-poc/compare/v4.2.0...v4.3.0) (2021-06-06)
+
+
+### Bug Fixes
+
+* add master branch for testing ci ([0009944](https://github.com/mariocoski/semantic-release-poc/commit/00099448f49e800d5bcb471328b83976ca66d4b3))
+* add new release to env vars ([521285b](https://github.com/mariocoski/semantic-release-poc/commit/521285bdacbca854fdcbab8413725a000b5fa033))
+* sync prod with master ([e73eb3a](https://github.com/mariocoski/semantic-release-poc/commit/e73eb3acfd9e6c0071da216b1a0d149add5101c2))
+* test ([920087d](https://github.com/mariocoski/semantic-release-poc/commit/920087daa167c6d4b33c2d028bdaa8fe080d2d2e))
+* test ([902734c](https://github.com/mariocoski/semantic-release-poc/commit/902734cf1c0d01d7dae27024a7d12b1882dd8166))
+* test ([1020a24](https://github.com/mariocoski/semantic-release-poc/commit/1020a24d6ae1214fd89ae7aa99510fe9d558b203))
+* test ([667cd5e](https://github.com/mariocoski/semantic-release-poc/commit/667cd5e52a548cfd6101078b46bbc3f361313c4f))
+* test ([6a2e70c](https://github.com/mariocoski/semantic-release-poc/commit/6a2e70c95892b4a35f65c19807b1f547e953dd30))
+* test ([4348692](https://github.com/mariocoski/semantic-release-poc/commit/4348692e8d14d3d3ea405537d3127ccbc68ecec6))
+* test ([0ddfbc9](https://github.com/mariocoski/semantic-release-poc/commit/0ddfbc9350cf52b2edd33291842d991c328de401))
+
+
+### Features
+
+* echo in github action ([97aaaa1](https://github.com/mariocoski/semantic-release-poc/commit/97aaaa12cf2634146a85570cc03414046a055ccf))
+
 # [4.2.0](https://github.com/mariocoski/semantic-release-poc/compare/v4.1.1...v4.2.0) (2021-06-06)
 
 
