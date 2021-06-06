@@ -1,3 +1,11 @@
+# [4.2.0](https://github.com/mariocoski/semantic-release-poc/compare/v4.1.1...v4.2.0) (2021-06-06)
+
+
+### Features
+
+* add new express handler ([c1bf864](https://github.com/mariocoski/semantic-release-poc/commit/c1bf86450304c7f618e57f0d18bb451337b3e221))
+* extract OK status ([e93675c](https://github.com/mariocoski/semantic-release-poc/commit/e93675c5553d11b4465eb0fa90d022c3e6532d42))
+
 ## [4.1.1](https://github.com/mariocoski/semantic-release-poc/compare/v4.1.0...v4.1.1) (2021-06-06)
 
 
