@@ -1,3 +1,10 @@
+## [4.3.1](https://github.com/mariocoski/semantic-release-poc/compare/v4.3.0...v4.3.1) (2021-06-06)
+
+
+### Bug Fixes
+
+* update semantic-release plugin ([b28a3c3](https://github.com/mariocoski/semantic-release-poc/commit/b28a3c3241c0af8029a820a6e0fc004b36750a88))
+
 # [4.3.0](https://github.com/mariocoski/semantic-release-poc/compare/v4.2.0...v4.3.0) (2021-06-06)
 
 
