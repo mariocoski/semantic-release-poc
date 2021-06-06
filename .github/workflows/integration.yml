@@ -9,8 +9,6 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Set the value
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         id: step_one
         run: |
           export NEXT_VERSION=$(npx -p @semantic-release/exec -p semantic-release semantic-release --dry-run --plugins "@semantic-release/commit-analyzer,@semantic-release/exec" --analyzeCommits @semantic-release/commit-analyzer --verifyRelease @semantic-release/exec --verifyReleaseCmd 'echo ${nextRelease.version}')
