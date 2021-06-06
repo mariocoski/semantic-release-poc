@@ -2,7 +2,7 @@
 const branch = process.env.GITHUB_REF && process.env.GITHUB_REF.split("/")[2];
 
 const config = {
-  branches: ["production", "master", { name: "staging", prerelease: true }],
+  branches: ["production", { name: "staging", prerelease: true }],
 };
 
 const prereleasePlugins = [
