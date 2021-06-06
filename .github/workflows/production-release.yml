@@ -27,8 +27,10 @@ jobs:
       # https://github.com/semantic-release/semantic-release/blob/master/docs/usage/workflow-configuration.md#pre-release-branches
       # https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/github-actions.md
       - name: Set next version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         # https://github.com/semantic-release/semantic-release/issues/753
-        run: export NEXT_VERSION=$(npx semantic-release --dry-run | grep 'The next release version is' | sed -E 's/.* ([[:digit:].]+)$/\1/')
+        run: export NEXT_VERSION=$(npx -p @semantic-release/exec -p semantic-release semantic-release --dry-run --plugins "@semantic-release/commit-analyzer,@semantic-release/exec" --analyzeCommits @semantic-release/commit-analyzer --verifyRelease @semantic-release/exec --verifyReleaseCmd 'echo ${nextRelease.version}')
 
       - name: Print next version
         run: echo $NEXT_VERSION
