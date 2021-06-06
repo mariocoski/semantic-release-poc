@@ -11,7 +11,8 @@ jobs:
       - name: Set the value
         id: step_one
         run: |
-          echo "action_state=kokos" >> $GITHUB_ENV
+          export NEXT_VERSION=4.2.3
+          echo "action_state={$NEXT_VERSION}" >> $GITHUB_ENV
         # export NEXT_VERSION=$(npx -p @semantic-release/exec -p semantic-release semantic-release --dry-run --plugins "@semantic-release/commit-analyzer,@semantic-release/exec" --analyzeCommits @semantic-release/commit-analyzer --verifyRelease @semantic-release/exec --verifyReleaseCmd 'echo ${nextRelease.version}')
         # echo $NEXT_VERSION;
 
